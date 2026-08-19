@@ -1,5 +1,5 @@
 Sin realizar:
-- Category
+
 - Cart
 - Order
 - OrderItem
@@ -8,3 +8,4 @@ Sin realizar:
 Realizado:
 - ~~User~~
 - ~~Product~~
+- ~~Category~~

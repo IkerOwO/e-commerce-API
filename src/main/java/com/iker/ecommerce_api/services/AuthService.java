@@ -47,11 +47,12 @@ public class AuthService implements UserDetailsService{
         if (repository.existsByEmail(request.getEmail())) {
             throw new UserAlreadyExistsException("Email associated with another account!");
         }
-        User user = new User();
-        user.setEmail(request.getEmail());
-        user.setPassword(encoder.encode(request.getPassword()));
-        user.setUsername(request.getUsername());
-        user.setRole("ROLE_USER");
+        User user = new User(
+            request.getEmail(),
+            encoder.encode(request.getPassword()),
+            request.getUsername(),
+            "ROLE_USER"
+        );
         repository.save(user);
     }
 
