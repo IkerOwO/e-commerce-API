@@ -1,4 +1,4 @@
-package com.iker.ecommerce_api.exceptions;
+package com.iker.ecommerce_api.exceptions.User;
 
 public class UserAlreadyExistsException extends RuntimeException {
     public UserAlreadyExistsException(String message) {
