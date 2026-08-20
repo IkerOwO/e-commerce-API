@@ -2,18 +2,16 @@ package com.iker.ecommerce_api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.iker.ecommerce_api.dtos.Auth.LoginRequest;
 import com.iker.ecommerce_api.dtos.Auth.LoginResponse;
 import com.iker.ecommerce_api.dtos.Auth.RegisterUserRequest;
 import com.iker.ecommerce_api.services.AuthService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "*")
 public class AuthController {
     
     @Autowired
