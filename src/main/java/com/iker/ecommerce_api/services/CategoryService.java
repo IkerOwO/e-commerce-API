@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.iker.ecommerce_api.dtos.Category.RegisterCategoryRequest;
 import com.iker.ecommerce_api.entities.Category;
 import com.iker.ecommerce_api.exceptions.Category.CategoryAlreadyExists;
