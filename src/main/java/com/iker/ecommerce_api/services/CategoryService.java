@@ -33,7 +33,8 @@ public class CategoryService {
         if (repository.existsByName(request.getName())) {
             throw new CategoryAlreadyExists("Category already in Database!");
         }
-        Category category = new Category(request.getName());
+        Category category = new Category();
+        category.setName(request.getName());
         repository.save(category);
     }
 

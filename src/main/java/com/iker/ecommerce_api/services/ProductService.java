@@ -33,12 +33,11 @@ public class ProductService {
         if (repository.existsBySerialNumber(request.getSerialNumber())) {
             throw new ProductAlreadyExistsException("The product is already on the Database!");
         }
-        Product product = new Product(
-            request.getName(),
-            request.getSerialNumber(),
-            request.getStock(),
-            request.getPrice()
-        );
+        Product product = new Product();
+        product.setName(request.getName());
+        product.setSerialNumber(request.getSerialNumber());
+        product.setStock(request.getStock());
+        product.setPrice(request.getPrice());
         repository.save(product);
     }
 
