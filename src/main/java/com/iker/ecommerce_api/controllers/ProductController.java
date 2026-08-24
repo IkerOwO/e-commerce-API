@@ -29,7 +29,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getBySerialNumber(@RequestParam long serialNumber) {
+    public Optional<Product> getBySerialNumber(@PathVariable long serialNumber) {
         return service.getBySerialNumber(serialNumber);
     }
     
