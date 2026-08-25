@@ -20,8 +20,11 @@ public class Cart {
             name = "product_cart",
             joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
-    )private Set<Product> products = new HashSet<>();
+    )
+    private Set<Product> products = new HashSet<>();
 
+    @OneToMany(mappedBy = "cart")
+    private Set<Order> orders = new HashSet<>();
 
     public Cart() { }
 
@@ -59,8 +62,20 @@ public class Cart {
     }
 
     public void deleteProduct(Long product_id) {
+        if (products == null) {
+            return;
+        }
+        this.products = new HashSet<>(products);
         products.removeIf(
             product -> product != null && product.getId() != null && product.getId().equals(product_id)
         );
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 }

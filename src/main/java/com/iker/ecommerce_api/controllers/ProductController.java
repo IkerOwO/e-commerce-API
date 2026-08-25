@@ -2,7 +2,6 @@ package com.iker.ecommerce_api.controllers;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -52,5 +51,6 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) {
         service.deleteProduct(id);
+        ResponseEntity.ok("Product deleted from Database!");
     }
 }

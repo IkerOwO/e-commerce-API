@@ -28,6 +28,9 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Cart cart;
 
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Order order;
+
     public User() { }
 
     public User(String username, String email, String password, String role) {
@@ -83,5 +86,13 @@ public class User {
 
     public void setCart(Cart cart) {
         this.cart = cart;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

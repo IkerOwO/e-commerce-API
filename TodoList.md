@@ -1,5 +1,4 @@
 Sin realizar:
-- Order
 - OrderItem
 - Payment
 
@@ -8,3 +7,4 @@ Realizado:
 - ~~Product~~
 - ~~Category~~
 - ~~Cart~~
+- ~~Order~~

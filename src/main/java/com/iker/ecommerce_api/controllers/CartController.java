@@ -1,7 +1,7 @@
 package com.iker.ecommerce_api.controllers;
 
+import com.iker.ecommerce_api.dtos.Cart.AddToCartRequest;
 import com.iker.ecommerce_api.entities.Cart;
-import com.iker.ecommerce_api.entities.Product;
 import com.iker.ecommerce_api.entities.User;
 import com.iker.ecommerce_api.services.CartService;
 import jakarta.validation.Valid;
@@ -26,8 +26,8 @@ public class CartController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addToCart(@Valid @RequestBody User user, @RequestBody Product product) {
-        service.addToCart(user, product);
+    public ResponseEntity<?> addToCart(@Valid @RequestBody AddToCartRequest request) {
+        service.addToCart(request.getUser(), request.getProduct());
         return ResponseEntity.ok("Added to cart!");
     }
 

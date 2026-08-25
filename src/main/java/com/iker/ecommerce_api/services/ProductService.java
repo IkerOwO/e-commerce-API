@@ -3,6 +3,7 @@ package com.iker.ecommerce_api.services;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.iker.ecommerce_api.dtos.Product.RegisterProductRequest;
@@ -67,5 +68,6 @@ public class ProductService {
             p -> repository.delete(p), 
             () -> System.out.println("Product not found!")
         );
+        ResponseEntity.ok("Product deleted from Database!");
     }
 }
