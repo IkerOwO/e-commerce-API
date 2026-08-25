@@ -37,6 +37,9 @@ public class Product {
     )
     private Set<Category> categories = new HashSet<>();
 
+    @ManyToMany(mappedBy = "products")
+    private Set<Cart> carts = new HashSet<>();
+
     public Product(){ }
 
     public Product(String name, Long serialNumber, int stock, double price) {
@@ -92,5 +95,13 @@ public class Product {
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    public Set<Cart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(Set<Cart> carts) {
+        this.carts = carts;
     }
 }
