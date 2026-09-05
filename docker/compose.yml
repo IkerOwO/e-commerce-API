@@ -6,7 +6,7 @@ services:
     ports:
       - "8090:8090"
     depends_on:
-      mysqldb:
+      mysql:
           condition: service_healthy
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/${DATABASE_NAME}
@@ -15,7 +15,7 @@ services:
     networks:
       - springboot-mysql-network
   
-  mysqldb:
+  mysql:
     image: mysql:8.0.33
     ports:
       - "3306:3307"
