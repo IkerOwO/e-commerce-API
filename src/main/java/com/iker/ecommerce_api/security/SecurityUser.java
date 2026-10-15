@@ -2,18 +2,15 @@ package com.iker.ecommerce_api.security;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.jspecify.annotations.Nullable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.iker.ecommerce_api.entities.User;
 
 public class SecurityUser implements UserDetails{
-    @Autowired
-    private User user;
+
+    private final User user;
 
     public SecurityUser(User user) {
         this.user = user;

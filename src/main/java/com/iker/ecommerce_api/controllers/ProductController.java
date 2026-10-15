@@ -2,7 +2,6 @@ package com.iker.ecommerce_api.controllers;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.iker.ecommerce_api.dtos.Product.RegisterProductRequest;
@@ -10,13 +9,12 @@ import com.iker.ecommerce_api.entities.Product;
 import com.iker.ecommerce_api.services.ProductService;
 import jakarta.validation.Valid;
 
-
 @RestController
 @RequestMapping("/product")
 @CrossOrigin(origins = "*")
 public class ProductController {
-    @Autowired
-    private ProductService service;
+
+    private final ProductService service;
 
     public ProductController(ProductService service) {
         this.service = service;

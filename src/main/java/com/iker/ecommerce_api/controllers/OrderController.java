@@ -4,7 +4,6 @@ import com.iker.ecommerce_api.dtos.Order.CreateOrderRequest;
 import com.iker.ecommerce_api.entities.Order;
 import com.iker.ecommerce_api.services.OrderService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
@@ -12,8 +11,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/order")
 public class OrderController {
-    @Autowired
-    private OrderService service;
+
+    private final OrderService service;
 
     public OrderController(OrderService service) {
         this.service = service;

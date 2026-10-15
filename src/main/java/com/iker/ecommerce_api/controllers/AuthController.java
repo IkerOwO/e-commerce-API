@@ -1,6 +1,5 @@
 package com.iker.ecommerce_api.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.iker.ecommerce_api.dtos.Auth.LoginRequest;
@@ -14,8 +13,7 @@ import jakarta.validation.Valid;
 @CrossOrigin(origins = "*")
 public class AuthController {
     
-    @Autowired
-    private AuthService service;
+    private final AuthService service;
 
     public AuthController(AuthService service) {
         this.service = service;
