@@ -6,15 +6,14 @@ import com.iker.ecommerce_api.entities.User;
 import com.iker.ecommerce_api.exceptions.Cart.ProductIsNullException;
 import com.iker.ecommerce_api.exceptions.Cart.UserIsNullException;
 import com.iker.ecommerce_api.repositories.CartRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
 public class CartService {
-    @Autowired
-    private CartRepository repository;
+
+    private final CartRepository repository;
 
     public CartService(CartRepository repository) {
         this.repository = repository;

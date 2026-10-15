@@ -1,7 +1,6 @@
 package com.iker.ecommerce_api.security;
 
 import java.io.IOException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,11 +15,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter{
-    @Autowired
-    private JwtService jwtService;
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private final JwtService jwtService;
+
+    private final UserDetailsService userDetailsService;
 
     public JwtAuthenticationFilter(JwtService jwtService, UserDetailsService userDetailsService) {
         this.jwtService = jwtService;

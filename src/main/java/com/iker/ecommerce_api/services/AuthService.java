@@ -1,12 +1,10 @@
 package com.iker.ecommerce_api.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.iker.ecommerce_api.dtos.Auth.LoginRequest;
 import com.iker.ecommerce_api.dtos.Auth.LoginResponse;
 import com.iker.ecommerce_api.dtos.Auth.RegisterUserRequest;
@@ -21,14 +19,11 @@ import com.iker.ecommerce_api.security.SecurityUser;
 @Service
 public class AuthService implements UserDetailsService{
     
-    @Autowired
-    private AuthRepository repository;
+    private final AuthRepository repository;
 
-    @Autowired
-    private JwtService jwtService;
+    private final JwtService jwtService;
 
-    @Autowired
-    private PasswordEncoder encoder;
+    private final PasswordEncoder encoder;
 
     public AuthService(AuthRepository repository, JwtService jwtService, PasswordEncoder encoder) {
         this.repository = repository;

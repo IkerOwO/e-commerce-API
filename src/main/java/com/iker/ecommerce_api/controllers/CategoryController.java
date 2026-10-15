@@ -2,7 +2,6 @@ package com.iker.ecommerce_api.controllers;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.iker.ecommerce_api.dtos.Category.RegisterCategoryRequest;
@@ -14,8 +13,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/category")
 @CrossOrigin(origins = "*")
 public class CategoryController {
-    @Autowired
-    private CategoryService service;
+
+    private final CategoryService service;
 
     public CategoryController(CategoryService service) {
         this.service = service;
